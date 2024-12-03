@@ -8,7 +8,6 @@ res=0
 do=True
 with fileinput.input(files="input/input_03.txt", encoding="utf-8") as f:
     for line in f:
-        #muls = re_mul.match(line);
         for op in re.findall(r"mul\(\d+\,\d+\)|do\(\)|don't\(\)", line):
             cmd = re.split(r'[,\)\(]', op)
             if 'mul' == cmd[0]:

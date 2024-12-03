@@ -6,7 +6,6 @@ import fileinput, re
 res=0
 with fileinput.input(files="input/input_03_sample.txt", encoding="utf-8") as f:
     for line in f:
-        #muls = re_mul.match(line);
         for cmd in re.findall(r"mul\(\d+\,\d+\)", line):
             cmd_mul = re.split(r'[,)(]', cmd)
             if 'mul' == cmd_mul[0]: res += int(cmd_mul[1])*int(cmd_mul[2])
